@@ -1,6 +1,8 @@
 package ca.corbett.musicplayer.extensions.template;
 
 import ca.corbett.extensions.AppExtension;
+import ca.corbett.extensions.AppExtensionInfo;
+import ca.corbett.extras.properties.AbstractProperty;
 import ca.corbett.musicplayer.Actions;
 import ca.corbett.musicplayer.audio.AudioMetadata;
 import ca.corbett.musicplayer.ui.AppTheme;
@@ -16,7 +18,66 @@ import java.util.List;
  * Modify as described in the README, using the javadocs on each
  * method as a guide to what you can implement.
  */
-public abstract class ExtensionTemplate extends AppExtension {
+public class ExtensionTemplate extends AppExtension {
+
+    private final AppExtensionInfo extInfo;
+
+    /**
+     * We must supply a no-arg constructor, as that's what the application expects.
+     * Best practice here is to verify that we can load our bundled extInfo.json file,
+     * and throw a RuntimeException if we can't, as that indicates a problem with the extension jar.
+     */
+    public ExtensionTemplate() {
+        extInfo = AppExtensionInfo.fromExtensionJar(getClass(), "/extInfo.json");
+        if (extInfo == null) {
+            throw new RuntimeException("ExtensionTemplate: can't parse extInfo.json from jar resources!");
+        }
+    }
+
+    /**
+     * The application will query this method to get the extension's metadata, which is stored in extInfo.json.
+     * Be sure to edit the template extInfo.json file to provide information about your extension!
+     */
+    @Override
+    public AppExtensionInfo getInfo() {
+        return extInfo;
+    }
+
+    /**
+     * If your application needs to supply configuration properties for the user to modify, you can supply
+     * a list of them here. An empty list is perfectly fine, if you have no config properties to expose.
+     */
+    @Override
+    protected List<AbstractProperty> createConfigProperties() {
+        return List.of();
+    }
+
+    /**
+     * If you need to load images, icons, sound effects, or any other resources from your bundled jar file,
+     * you must do that here. The class loader that loads your jar file will be closed after this method
+     * is invoked, so you won't get another chance to load them later. This method is invoked exactly
+     * once, immediately after your extension is instantiated.
+     */
+    @Override
+    protected void loadJarResources() {
+    }
+
+    /**
+     * Invoked by the application either as the application is starting up, or when the
+     * extension is enabled within the application. After this method is invoked, your extension
+     * is "active" and your other extension methods may be invoked by the application.
+     */
+    public void onActivate() {
+    }
+
+    /**
+     * Invoked either as the application is shutting down, or when the
+     * extension is disabled within the application. After this method is invoked, your extension
+     * is no longer "active", and your other extension methods will no longer be invoked.
+     */
+    public void onDeactivate() {
+    }
+
 
     /**
      * Override this method if your extension provides custom
@@ -71,7 +132,7 @@ public abstract class ExtensionTemplate extends AppExtension {
      */
     public List<VisualizationManager.Visualizer> getCustomVisualizers() {
         // If your extension supplies a custom Visualizer, supply it here, like this:
-        //return List.of(new ExtensionVisualizer());
+        //return List.of(new VisualizerTemplate());
 
         // Or return an empty list if you don't have any custom visualizers:
         return new ArrayList<>();
