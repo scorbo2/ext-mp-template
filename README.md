@@ -71,6 +71,8 @@ Two template classes are provided: `ExtensionTemplate` and `VisualizerTemplate`.
 renaming these to something that better describes your extension. 
 You can also remove the `VisualizerTemplate` class if your extension does not provide a visualizer.
 
+Example: `MyAmazingExtension` and `SuperCoolVisualizer`.
+
 ### Implement extension methods
 
 Now you can go through the two supplied template classes and modify them to implement whatever
