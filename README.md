@@ -55,7 +55,7 @@ numbers the same. For example: `4.0.1`, `4.0.2`, and so on. Minor releases of th
 are guaranteed not to break compatible extensions, so all MusicPlayer `4.x` releases will be
 compatible with your extension, without recompiling/repackaging it. A major application release
 will likely require recompiling/repackaging all extensions, which should then target that release version.
-For example, MusicPlayer `5.0` would require a `targetAppVersion` of `5.0.0`, and you should
+For example, MusicPlayer `5.0` would require a `targetAppVersion` of `5.0`, and you should
 consider bumping the extension version to `5.0.0` to match it.
 
 ### Change the package name/path
