@@ -1,0 +1,9 @@
+{
+  "name": "EXTENSION_NAME_GOES_HERE",
+  "author": "AUTHOR_NAME_GOES_HERE",
+  "version": "4.0.0",
+  "targetAppName": "MusicPlayer",
+  "targetAppVersion": "4.0",
+  "shortDescription": "EXTENSION_SHORT_DESCRIPTION_HERE",
+  "longDescription": "EXTENSION_LONG_DESCRIPTION_HERE"
+}
