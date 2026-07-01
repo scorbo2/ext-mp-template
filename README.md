@@ -92,8 +92,10 @@ This will register them with the application so that the user can select them.
 ### Package your extension.
 
 Running `mvn package` with the supplied `pom.xml` will package your extension into a thin jar
-file. Note that the MusicPlayer code itself is listed as `<scope>provided</scope>` in the `pom.xml` file,
+file. Note that the MusicPlayer dependency is listed as `<scope>provided</scope>` in the `pom.xml` file,
 so the resulting jar will only contain your extension code, not the application code. This is fine.
 Your jar can be copied to the extensions directory of any compatible MusicPlayer installation,
 and the application will load it on startup. Your extension jar can also be published to a website
 for automatic download via the ExtensionManager dialog, but that is beyond the scope of this document.
+Refer to the [ExtPackager](https://github.com/scorbo2/ext-packager) application if you wish to
+package your extension for automatic download and installation via the MusicPlayer ExtensionManager dialog.
