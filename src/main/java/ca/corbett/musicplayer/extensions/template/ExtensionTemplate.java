@@ -4,14 +4,10 @@ import ca.corbett.extensions.AppExtension;
 import ca.corbett.musicplayer.Actions;
 import ca.corbett.musicplayer.audio.AudioMetadata;
 import ca.corbett.musicplayer.ui.AppTheme;
-import ca.corbett.musicplayer.ui.AudioPanelIdleAnimation;
 import ca.corbett.musicplayer.ui.LyricsEditDialog;
 import ca.corbett.musicplayer.ui.TrackInfoDialog;
 import ca.corbett.musicplayer.ui.VisualizationManager;
 
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

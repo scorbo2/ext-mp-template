@@ -3,7 +3,7 @@ package ca.corbett.musicplayer.extensions.template;
 import ca.corbett.musicplayer.ui.VisualizationManager;
 import ca.corbett.musicplayer.ui.VisualizationTrackInfo;
 
-import java.awt.*;
+import java.awt.Graphics2D;
 
 /**
  * Completely optional! You can implement a custom Visualizer for your extension if you
