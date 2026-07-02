@@ -1,10 +1,10 @@
 package ca.corbett.musicplayer.extensions.template;
 
-import ca.corbett.extensions.AppExtension;
 import ca.corbett.extensions.AppExtensionInfo;
 import ca.corbett.extras.properties.AbstractProperty;
 import ca.corbett.musicplayer.Actions;
 import ca.corbett.musicplayer.audio.AudioMetadata;
+import ca.corbett.musicplayer.extensions.MusicPlayerExtension;
 import ca.corbett.musicplayer.ui.AppTheme;
 import ca.corbett.musicplayer.ui.LyricsEditDialog;
 import ca.corbett.musicplayer.ui.TrackInfoDialog;
@@ -18,7 +18,7 @@ import java.util.List;
  * Modify as described in the README, using the javadocs on each
  * method as a guide to what you can implement.
  */
-public class ExtensionTemplate extends AppExtension {
+public class ExtensionTemplate extends MusicPlayerExtension {
 
     private final AppExtensionInfo extInfo;
 
@@ -67,6 +67,7 @@ public class ExtensionTemplate extends AppExtension {
      * extension is enabled within the application. After this method is invoked, your extension
      * is "active" and your other extension methods may be invoked by the application.
      */
+    @Override
     public void onActivate() {
     }
 
@@ -75,6 +76,7 @@ public class ExtensionTemplate extends AppExtension {
      * extension is disabled within the application. After this method is invoked, your extension
      * is no longer "active", and your other extension methods will no longer be invoked.
      */
+    @Override
     public void onDeactivate() {
     }
 
@@ -92,6 +94,7 @@ public class ExtensionTemplate extends AppExtension {
      *
      * @return A List of MPActions. A null or empty list will be ignored.
      */
+    @Override
     public List<Actions.MPAction> getMediaPlayerActions() {
         return new ArrayList<>();
     }
@@ -109,6 +112,7 @@ public class ExtensionTemplate extends AppExtension {
      *
      * @return A List of MPActions. A null or empty list will be ignored.
      */
+    @Override
     public List<Actions.MPAction> getPlaylistActions() {
         return new ArrayList<>();
     }
@@ -120,6 +124,7 @@ public class ExtensionTemplate extends AppExtension {
      *
      * @return a List of application themes supplied by this extension
      */
+    @Override
     public List<AppTheme.Theme> getCustomThemes() {
         return new ArrayList<>();
     }
@@ -130,6 +135,7 @@ public class ExtensionTemplate extends AppExtension {
      *
      * @return A List of Visualizer instances. Might be empty.
      */
+    @Override
     public List<VisualizationManager.Visualizer> getCustomVisualizers() {
         // If your extension supplies a custom Visualizer, supply it here, like this:
         //return List.of(new VisualizerTemplate());
@@ -146,6 +152,7 @@ public class ExtensionTemplate extends AppExtension {
      * @param metadata The metadata for the track to be displayed.
      * @return a TrackInfoDialog instance, or null if this extension doesn't supply one.
      */
+    @Override
     public TrackInfoDialog getTrackInfoDialog(AudioMetadata metadata) {
         return null;
     }
@@ -157,6 +164,7 @@ public class ExtensionTemplate extends AppExtension {
      * @param metadata The metadata for the track to be edited.
      * @return a LyricsEditDialog instance, or null if this extension doesn't supply one.
      */
+    @Override
     public LyricsEditDialog getLyricsEditDialog(AudioMetadata metadata) {
         return null;
     }
